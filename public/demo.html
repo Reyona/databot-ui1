@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Express H5</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7/css/bootstrap.css">
+
+<!--    <link rel="stylesheet" href="./bootstrap-switch/css/bootstrap3/bootstrap-switch.css">-->
+    <link rel="stylesheet" href="./stylesheets/angular-toggle-switch-bootstrap-3.css">
+
+</head>
+<body>
+<h1>Hello World!</h1>
+<h2>View Engine==Html</h2>
+<hr>
+<div ng-controller="MyCtrl">
+<!--
+    <p>
+        <a href="http://bootstrapswitch.com/options.html">jQuery Bootstrap Switch</a>
+        <input type="checkbox" name="my-checkbox" data-on-color="success" ng-click="test()" ng-model="jq">{{jq}}
+    </p>
+-->
+
+    <p>
+        <a href="http://jumplink.github.io/angular-toggle-switch/">Angular-toggle-switch</a>
+        <toggle-switch
+                ng-model="switchStatus" class="switch-success" on-label="true" off-label="false" ng-click="test();toggle();">
+        </toggle-switch>
+        {{switchStatus}}
+    </p>
+
+
+    <h1>{{greeting}}{{userName}}!</h1>
+    <p>
+        Not you?Please input your name:<input ng-model="userName">
+        <button ng-click="addUser()">addUser</button>
+    </p>
+    <button ng-click="SayHi1()">Say Hi to Node111</button>
+    <button ng-click="SayHi2()">Say Hi to Node222</button>
+</div>
+</body>
+<script src="./scripts/angular-1.6.2/angular.js"></script>
+
+<script src="./scripts/angular-toggle-switch.min.js"></script>
+
+<!--<script src="./javascripts/jQuery/jquery-3.1.1.min.js"></script>
+<script src="./bootstrap-switch/js/bootstrap-switch.js"></script>-->
+
+
+<script src="./scripts/myCtrl.js"></script>
+</html>

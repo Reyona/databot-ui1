@@ -1,0 +1,56 @@
+<div>
+    <table>
+        <tr>
+            <th>_id</th>
+            <th>name</th>
+            <th>L</th>
+            <th>R</th>
+            <th>key</th>
+
+            <th>data<input ng-model="dataKeyword" placeholder="filter by data"></th>
+
+            <th>data extraction from</th>
+            <th>data extraction to</th>
+            <th>execution time</th>
+            <th>ignore</th>
+            <th>cleaned</th>
+            <th>specFileName</th>
+            <th>isReprocess</th>
+            <th>updatedAt</th>
+            <th>createdAt</th>
+            <th>logs</th>
+            <th>__v</th>
+        </tr>
+        <tbody>
+        <tr ng-repeat="probdatum in probdata | FilterByData:dataKeyword">
+
+            <td><a href="#/probdataList/{{probdatum._id}}">{{probdatum._id}}</a></td>
+
+            <td>{{probdatum.name}}</td>
+            <td>{{probdatum.L}}</td>
+            <td>{{probdatum.R}}</td>
+            <td>{{probdatum.key}}</td>
+            <td>{{probdatum.data}}</td>
+            <td>{{probdatum["data extraction from"]}}</td>
+            <td>{{probdatum["data extraction to"]}}</td>
+            <td>{{probdatum["execution time"]}}</td>
+
+            <td>
+                <toggle-switch
+                        class="switch-success" on-label="true" off-label="false"
+                        ng-model="probdatum.ignore" ng-click="switchIgnore(probdatum._id);toggle();">
+                </toggle-switch>
+                {{probdatum.ignore}}
+            </td>
+
+            <td>{{probdatum.cleaned}}</td>
+            <td>{{probdatum.specFileName}}</td>
+            <td>{{probdatum.isReprocess}}</td>
+            <td>{{probdatum.updatedAt}}</td>
+            <td>{{probdatum.createdAt}}</td>
+            <td>{{probdatum.logs}}</td>
+            <td>{{probdatum.__v}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
